@@ -1,0 +1,67 @@
+{
+  "name": "@ayaqen/quotaweave",
+  "version": "0.1.0",
+  "description": "Deterministic multi-resource fairness and admission control for shared workloads.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./simulator": {
+      "types": "./dist/simulator.d.ts",
+      "import": "./dist/simulator.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "benchmark": "npm run build && node benchmarks/scheduler.mjs",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "prepack": "npm run check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayaqen/quotaweave.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayaqen/quotaweave/issues"
+  },
+  "homepage": "https://github.com/ayaqen/quotaweave#readme",
+  "keywords": [
+    "admission-control",
+    "distributed-systems",
+    "fair-queue",
+    "multi-tenant",
+    "noisy-neighbor",
+    "resource-scheduler",
+    "rate-limiting"
+  ],
+  "author": "Ayub <134882635+ayaqen@users.noreply.github.com>",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

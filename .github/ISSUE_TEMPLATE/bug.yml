@@ -1,0 +1,27 @@
+name: Bug report
+description: Report an incorrect scheduling, policy, lease, or simulation result.
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Provide the smallest runnable policy and workload that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected invariant
+      description: Explain the fairness, capacity, ordering, or fencing invariant you expected.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: QuotaWeave version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Node.js version
+    validations:
+      required: true
