@@ -32,6 +32,27 @@ npm install @ayaqen/quotaweave
 
 Node.js 20 or newer is required.
 
+## Container image
+
+The compiled library and runnable inference example are also published as a
+multi-platform container package at `ghcr.io/ayaqen/quotaweave`.
+
+```bash
+docker pull ghcr.io/ayaqen/quotaweave:latest
+docker run --rm ghcr.io/ayaqen/quotaweave:latest
+```
+
+Build the same non-root image locally with:
+
+```bash
+docker build --tag ghcr.io/ayaqen/quotaweave:local .
+docker run --rm ghcr.io/ayaqen/quotaweave:local
+```
+
+Version tags such as `0.1.0` are created from Git tags such as `v0.1.0`.
+Every published image supports `linux/amd64` and `linux/arm64` and includes an
+SBOM, OCI metadata, and signed build provenance.
+
 ## Quick start
 
 ```ts
